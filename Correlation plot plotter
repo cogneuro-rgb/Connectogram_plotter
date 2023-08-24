@@ -1,0 +1,21 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the CSV file into a DataFrame
+csv_file_path = 'C:/Users/Neuro/Desktop/PhD/Roi_data.csv'
+data = pd.read_csv(csv_file_path)
+
+# Calculate the correlation matrix
+correlation_matrix = data.corr()
+
+# Set up the correlation plot using seaborn
+plt.figure(figsize=(10, 8))
+sns.set(style="white")  # Set the style of the plot
+
+# Generate a heatmap for the correlation matrix
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", vmin=-1, vmax=1)
+plt.title("Correlation Plot")
+
+# Display the plot
+plt.show()
